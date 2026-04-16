@@ -9,18 +9,18 @@
 }
 
 body {
-    /* Gradiente oscuro sobre la imagen para que el texto blanco resalte */
+    /* Gradiente oscuro para legibilidad y fondo fijo */
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
                       url('https://static.vecteezy.com/system/resources/previews/003/670/030/non_2x/football-field-or-soccer-field-background-free-photo.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed; /* Mantiene el fondo quieto al hacer scroll */
     color: white;
     line-height: 1.6;
 }
 
 /* =========================================
-   2. NAVEGACIÓN (HEADER)
+   2. NAVEGACIÓN (HEADER) - RESPONSIVA
    ========================================= */
 nav {
     display: flex;
@@ -52,7 +52,6 @@ nav {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    font-size: 0.9rem;
     transition: color 0.3s;
 }
 
@@ -81,16 +80,12 @@ nav {
 }
 
 /* =========================================
-   4. CONTENEDOR Y TARJETAS DE CANCHAS
+   4. CONTENEDOR Y TARJETAS (GRID RESPONSIVO)
    ========================================= */
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 40px 20px;
-}
-
-.categoria {
-    margin-bottom: 60px;
 }
 
 .categoria h2 {
@@ -100,12 +95,12 @@ nav {
     padding: 8px 25px;
     border-radius: 50px;
     margin-bottom: 30px;
-    font-size: 1.2rem;
     box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
 }
 
 .grid-canchas {
     display: grid;
+    /* auto-fit y minmax crean la magia responsiva */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
@@ -121,13 +116,7 @@ nav {
 }
 
 .cancha-card:hover {
-    transform: translateY(-10px);
-}
-
-.cancha-card p {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 15px;
+    transform: translateY(-10px); /* Efecto de elevación en PC */
 }
 
 .btn-reservar {
@@ -138,7 +127,6 @@ nav {
     border-radius: 10px;
     cursor: pointer;
     font-weight: bold;
-    font-size: 1rem;
     width: 100%;
     transition: background 0.3s;
 }
@@ -151,14 +139,10 @@ nav {
    5. FOOTER
    ========================================= */
 footer {
-    padding: 60px 20px;
+    padding: 40px 20px;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.95);
     margin-top: 50px;
-}
-
-.socials {
-    margin-bottom: 20px;
 }
 
 .socials a {
@@ -168,13 +152,8 @@ footer {
     font-weight: bold;
 }
 
-footer p {
-    font-size: 0.8rem;
-    opacity: 0.6;
-}
-
 /* =========================================
-   6. BOTÓN WHATSAPP (CORREGIDO)
+   6. BOTÓN WHATSAPP (FLOTANTE Y CENTRADO)
    ========================================= */
 .whatsapp-float {
     position: fixed;
@@ -188,26 +167,42 @@ footer p {
     align-items: center;
     justify-content: center;
     box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
-    z-index: 9999; /* Máxima prioridad visual */
-    text-decoration: none;
+    z-index: 9999;
     transition: all 0.3s ease;
 }
 
 .whatsapp-float img {
-    width: 35px; /* Tamaño controlado para que no se corte */
+    width: 35px;
     height: 35px;
     object-fit: contain;
-    display: block;
 }
 
 .whatsapp-float:hover {
-    background-color: #128c7e;
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.1);
 }
 
-/* Adaptación para celulares */
+/* =========================================
+   7. MEDIA QUERIES (AJUSTES PARA CELULARES)
+   ========================================= */
 @media (max-width: 600px) {
-    .hero h1 { font-size: 2.2rem; }
+    nav {
+        flex-direction: column; /* Apila logo y links en móviles */
+        padding: 15px;
+    }
+
+    .nav-links {
+        margin-top: 15px;
+        padding-left: 0;
+    }
+
+    .nav-links li {
+        margin: 5px 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem; /* Título más pequeño en celular */
+    }
+
     .whatsapp-float {
         width: 55px;
         height: 55px;
