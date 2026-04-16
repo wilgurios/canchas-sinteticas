@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="estilo.css">
+    <title>Canchas Colombia - Alquiler</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">FutColombia</div>
+            <ul class="nav-links"> 
+                <li><a href="#">Ingresar</a></li> 
+                <li><a href="#">Ubicación</a></li>
+                <li><a href="#">Mis Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Canchas De Fútbol</h1>
+        <h3>"Disfruta del fútbol en las mejores canchas de Colombia"</h3>
+    </section>
+
+    <main class="container">
+        <section class="categoria">
+            <h2>Fútbol 5</h2>
+            <div class="grid-canchas">
+                <div class="cancha-card">
+                    <p>Cancha 1 - Sintética</p>
+                    <button class="btn-reservar" onclick="enviarWhatsApp('Cancha 1 de Fútbol 5')">Reservar</button>
+                </div>
+                <div class="cancha-card">
+                    <p>Cancha 2 - Sintética</p>
+                    <button class="btn-reservar" onclick="enviarWhatsApp('Cancha 2 de Fútbol 5')">Reservar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="categoria">
+            <h2>Fútbol 8</h2>
+            <div class="grid-canchas">
+                <div class="cancha-card">
+                    <p>Cancha VIP</p>
+                    <button class="btn-reservar" onclick="enviarWhatsApp('Cancha VIP de Fútbol 8')">Reservar</button>
+                </div>
+                <div class="cancha-card">
+                    <p>Cancha Central</p>
+                    <button class="btn-reservar" onclick="enviarWhatsApp('Cancha Central de Fútbol 8')">Reservar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="socials">
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+        </div>
+        <p>&copy; 2026 Alquiler de Canchas Colombia</p>
+    </footer>
+
+    <a href="#" class="whatsapp-float" onclick="enviarWhatsApp('General')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>

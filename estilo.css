@@ -1,0 +1,217 @@
+/* =========================================
+   1. CONFIGURACIÓN GLOBAL Y RESET
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    /* Gradiente oscuro sobre la imagen para que el texto blanco resalte */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                      url('https://static.vecteezy.com/system/resources/previews/003/670/030/non_2x/football-field-or-soccer-field-background-free-photo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. NAVEGACIÓN (HEADER)
+   ========================================= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-bottom: 2px solid #27ae60;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #27ae60;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #27ae60;
+}
+
+/* =========================================
+   3. SECCIÓN HERO (TÍTULOS)
+   ========================================= */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.hero h3 {
+    font-weight: 300;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* =========================================
+   4. CONTENEDOR Y TARJETAS DE CANCHAS
+   ========================================= */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.categoria {
+    margin-bottom: 60px;
+}
+
+.categoria h2 {
+    background-color: #27ae60;
+    color: white;
+    display: inline-block;
+    padding: 8px 25px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(39, 174, 96, 0.3);
+}
+
+.grid-canchas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.cancha-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #2c3e50;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+}
+
+.cancha-card:hover {
+    transform: translateY(-10px);
+}
+
+.cancha-card p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-reservar {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.btn-reservar:hover {
+    background-color: #27ae60;
+}
+
+/* =========================================
+   5. FOOTER
+   ========================================= */
+footer {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.95);
+    margin-top: 50px;
+}
+
+.socials {
+    margin-bottom: 20px;
+}
+
+.socials a {
+    margin: 0 15px;
+    color: #27ae60;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer p {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* =========================================
+   6. BOTÓN WHATSAPP (CORREGIDO)
+   ========================================= */
+.whatsapp-float {
+    position: fixed;
+    width: 65px;
+    height: 65px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+    z-index: 9999; /* Máxima prioridad visual */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float img {
+    width: 35px; /* Tamaño controlado para que no se corte */
+    height: 35px;
+    object-fit: contain;
+    display: block;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Adaptación para celulares */
+@media (max-width: 600px) {
+    .hero h1 { font-size: 2.2rem; }
+    .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
